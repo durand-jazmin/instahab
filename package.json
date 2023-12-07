@@ -1,22 +1,32 @@
 {
-  "type": "module",
-  "name": "clon_instagram",
+  "type": "commonjs",
+  "name": "image-process",
   "version": "1.0.0",
-  "description": "API para proyecto clon_instagram",
-  "main": "index.js",
+  "description": "Utility to process images",
+  "main": "../getPool",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cors": "^2.8.5",
+    "bcrypt": "^5.1.1",
+    "chalk": "^4.1.2",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "express-fileupload": "^1.4.3",
+    "fs": "^0.0.1-security",
+    "jsonwebtoken": "^9.0.2",
+    "minimist": "^1.2.6",
     "morgan": "^1.10.0",
     "mysql2": "^3.6.5",
-    "nodemon": "^3.0.2"
+    "nanoid": "^5.0.4",
+    "sharp": "^0.33.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.55.0",
+    "nodemon": "^3.0.2",
+    "prettier": "^3.1.0"
   }
 }
