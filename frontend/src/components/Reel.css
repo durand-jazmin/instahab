@@ -1,0 +1,66 @@
+.reel {
+    padding: 10px;
+    width: 50vw;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .reel-content {
+    text-align: center;
+    margin-bottom: 10px; 
+  }
+  
+  .reel p {
+    margin: 0;
+    padding: 10px;
+  }
+  
+  .reel img {
+    width: 100%;
+    display: block;
+    height: auto;
+  }
+  
+  .user-info {
+    font-family: 'inria sans';
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .user-info img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .user-info span {
+    font-weight: bold;
+  }
+  
+  .timestamp {
+    font-family: 'inria sans';
+    color: #ccc;
+    font-size: 0.8em;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+  }
+  
+  .reel button {
+    font-family: 'inria sans';
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    color: #8e8e8e;
+  }
+  
+  .reel button:hover {
+    color: #dc3545;
+  }
+  
