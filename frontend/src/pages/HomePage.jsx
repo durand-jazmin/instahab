@@ -24,7 +24,7 @@ const HomePage = () => {
   return (
     <section className="home-page-container">
       <img
-        src="https://www.pngkey.com/png/full/828-8286178_mackeys-work-needs-no-elaborate-presentation-or-distracting.png"
+        src="https://i0.wp.com/www.dafontfree.io/wp-content/uploads/2020/12/instagram-old.png?resize=1100%2C750&ssl=1"
         alt="Instagram Logo"
         className="instagram-logo"
       />
