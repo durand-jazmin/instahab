@@ -19,7 +19,7 @@ const SignupPage = () => {
 
     try {
       await signUpUserService({ email, password });
-      navigate("/user");
+      navigate("/login");
     } catch (error) {
       setError(error.message);
     }
@@ -43,30 +43,28 @@ const SignupPage = () => {
         <form onSubmit={handleSignUp}>
           <fieldset>
             <div className="input-group">
-              <label htmlFor="email">Email</label>
+
               <input
                 type="email"
+                placeholder="Email"
                 id="email"
                 name="email"
                 value={email}
                 required
                 onChange={(e) => setEmail(e.target.value)}
               />
-            </div>
-            <div className="input-group">
-              <label htmlFor="password">Password</label>
               <input
                 type="password"
+                placeholder="Password"
                 id="password"
                 name="password"
                 value={password}
                 required
                 onChange={(e) => setPassword(e.target.value)}
               />
-            </div>
-            <label htmlFor="confirmPassword">Confirm Password</label>
-            <input
+              <input
               type="password"
+              placeholder="Confirm Password"
               id="confirmPassword"
               name="confirmPassword"
               value={confirmPassword}
@@ -75,6 +73,7 @@ const SignupPage = () => {
             />
             <button className="signup-button">Sign Up</button>
             {error && <p>{error}</p>}
+            </div>
           </fieldset>
         </form>
         <div className="signup-link">
