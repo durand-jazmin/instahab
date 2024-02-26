@@ -24,7 +24,6 @@
   }
   
   .user-info {
-    font-family: 'inria sans';
     display: flex;
     align-items: center;
     padding: 10px;
@@ -42,7 +41,6 @@
   }
   
   .timestamp {
-    font-family: 'inria sans';
     color: #ccc;
     font-size: 0.8em;
     margin-left: auto;
@@ -51,11 +49,11 @@
   }
   
   .reel button {
-    font-family: 'inria sans';
     background-color: transparent;
-    border: none;
+    border: 1px solid lightgray;
     cursor: pointer;
     padding: 5px 10px;
+    margin: 5px;
     font-size: 0.9em;
     color: #8e8e8e;
   }

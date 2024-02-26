@@ -27,40 +27,22 @@ const Reel = ({ reel, removeReel }) => {
   };
 
   return (
-    <article className="reel">
-      <div className="reel-content">
-        {reel.image && (
-          <img src={`${base_URL}/uploads/${reel.image}`} alt={reel.text} />
-        )}
-        <p>{reel.text}</p>
-      </div>
-      <div className="user-info">
-        <img
-          src={`https://source.unsplash.com/random/30x30?sig=${reel.user_id}`}
-          alt="User Profile"
-        />
-        <span>{reel.email}</span>
-        <LikeButton
-          reelId={reel.id}
-          initialLikes={reel.likes}
-          authToken={token}
-        />
-        <button
-          onClick={() => {
-            if (window.confirm("Are you sure?")) deleteReel(reel.id);
-          }}
-        >
-          Delete
-        </button>
-      </div>
-      <p>♥️ Likes: {reel.likes}</p>
-      <div className="timestamp">
-        <Link to={`/reel/${reel.id}`}>
-          {new Date(reel.created_at).toLocaleString()}
-        </Link>
-      </div>
-      {error && <p>{error}</p>}
-    </article>
+  <article className="reel">
+     
+  <div className="user-info">
+        <img src={`https://source.unsplash.com/random/30x30?sig=${reel.user_id}`} alt="User Profile"/>
+      <div className="user-email">Usuario: {reel.email}</div>
+  </div>
+    <div className="reel-content"> 
+        {reel.image && ( <img src={`${base_URL}/uploads/${reel.image}`} alt={reel.text} /> )}
+        <p>Comment: {reel.text}</p>
+      <div className="nav"><Link to={`/reel/${reel.id}`}>Created at: {new Date(reel.created_at).toLocaleDateString()}</Link></div>  
+        <LikeButton reelId={reel.id} initialLikes={reel.likes} authToken={token}/>
+        <button onClick={() => {if (window.confirm("Do you want to delete this reel?")) deleteReel(reel.id);}}>Delete reel</button>
+        <p>Likes: {reel.likes}</p>
+         {error && <p>{error}</p>}
+    </div>
+  </article>
   );
 };
 

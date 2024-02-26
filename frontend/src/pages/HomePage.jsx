@@ -1,5 +1,5 @@
-import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link,useNavigate } from "react-router-dom";
 import useReels from "../hooks/useReels";
 import ReelList from "../components/ReelList";
 import ErrorMessage from "../components/ErrorMessage";
@@ -23,19 +23,26 @@ const HomePage = () => {
 
   return (
     <section className="home-page-container">
-      <img
+       {user ? (
+        <> 
+          <div className="left-column">
+         <img
         src="https://www.pngkey.com/png/full/828-8286178_mackeys-work-needs-no-elaborate-presentation-or-distracting.png"
         alt="Instagram Logo"
         className="instagram-logo"
       />
-      {user ? (
-        <>
-          <NewReel addReel={addReel} />
-          <h1>📷 Latest reels</h1>
+          <Link to={`/user/${user.id}`}> <img className="avatar"
+              src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
+              alt="Avatar"/></Link>
+        </div>
+        
+        <div className="center-column">
           <ReelList reels={reels} removeReel={removeReel} />
-          <button className="logout-button" onClick={handleLogout}>
-            Logout
-          </button>
+        </div>
+
+        <div className="right-column">
+           <button className="logout-button" onClick={handleLogout}>Logout</button>
+          </div>
         </>
       ) : null}
     </section>

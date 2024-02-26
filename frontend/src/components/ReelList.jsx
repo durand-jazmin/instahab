@@ -1,4 +1,5 @@
 import Reel from './Reel';
+import './ReelList.css';
 
 const ReelList = ({ reels, removeReel }) => {
   return reels.length ? (

@@ -32,7 +32,6 @@
 
 
 .input-group input {
-    background-color: #ffffff24;
     padding: 1vw;
     margin: 5px;
     border: 1px solid grey;
@@ -41,10 +40,12 @@
 }
 
 .signup-button {
+   color: white;
     margin-top: 2vw;
     width: 42.3vw;
     height: 5vh;
     background-color: #2f80b4;
+    border-radius: 5px;
 }
 
 button:hover {
@@ -53,4 +54,10 @@ button:hover {
 
 .signup-link {
     text-align: center;
+    color:black;
+}
+a{
+    color: #2f80b4;
+    text-decoration: none;
+    font: 1em ;
 }
