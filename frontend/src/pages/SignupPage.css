@@ -9,14 +9,14 @@
 }
 
 .signup-screenshot {
-    width: 100%;
-    height: 100%;
+    width: 95%;
+    height: 95%;
     margin-top: 8px;
 }
 
 .signup-form {
     flex: 1;
-    text-align: left;
+    text-align: center;
 }
 
 .signup-logo {
@@ -25,10 +25,6 @@
 
 .input-group {
     margin-bottom: 1rem; 
-}
-
-.input-group label {
-    margin-bottom: 0.5rem; 
 }
 
 .input-group input {
@@ -40,7 +36,6 @@
 }
 
 .signup-button {
-    margin-top: 2vw;
     width: 42.3vw;
     height: 5vh;
     background-color: #2f80b4;
