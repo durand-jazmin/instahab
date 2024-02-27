@@ -1,10 +1,11 @@
-.reel {
-    padding: 10px;
-    width: 50vw;
+  .reel {
+    width: 40%;
+    max-width: 40%;  
+    padding: 15px;
+    border: 1px solid #000;
+    border-radius: 10px;
     margin: 0 auto;
     margin-bottom: 20px;
-    border: 1px solid #000;
-    border-radius: 8px;
   }
   
   .reel-content {
@@ -19,12 +20,10 @@
   
   .reel img {
     width: 100%;
-    display: block;
-    height: auto;
   }
   
   .user-info {
-    font-family: 'inria sans';
+    font-family: 'inria sans', sans-serif;
     display: flex;
     align-items: center;
     padding: 10px;
@@ -34,7 +33,7 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    margin-right: 10px;
+    margin-right: 8px;
   }
   
   .user-info span {
@@ -42,7 +41,7 @@
   }
   
   .timestamp {
-    font-family: 'inria sans';
+    font-family: 'inria sans', sans-serif;
     color: #000;
     font-size: 0.8em;
     margin-left: auto;
@@ -51,7 +50,7 @@
   }
   
   .reel button {
-    font-family: 'inria sans';
+    font-family: 'inria sans', sans-serif;
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -64,3 +63,10 @@
     color: #dc3545;
   }
   
+  @media (max-width: 768px) {
+    .reel {
+      width: 100%;
+      max-width: 100%;
+      margin-left: 0;
+    }
+  }

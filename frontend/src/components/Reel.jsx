@@ -27,6 +27,7 @@ const Reel = ({ reel, removeReel }) => {
   };
 
   return (
+   <div className="reel-container">
     <article className="reel">
       <div className="reel-content">
         {reel.image && (
@@ -61,6 +62,7 @@ const Reel = ({ reel, removeReel }) => {
       </div>
       {error && <p>{error}</p>}
     </article>
+    </div>
   );
 };
 

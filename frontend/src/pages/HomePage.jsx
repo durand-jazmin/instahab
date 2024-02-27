@@ -7,6 +7,7 @@ import NewReel from "../components/NewReel";
 import { AuthContext } from "../context/AuthContext";
 import Loading from "../components/Loading";
 import "./HomePage.css";
+import NavBar from "../components/NavBar";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -22,6 +23,8 @@ const HomePage = () => {
   if (error) return <ErrorMessage message={error} />;
 
   return (
+    <div>
+    <navBar />
     <section className="home-page-container">
       <img
         src="https://i0.wp.com/www.dafontfree.io/wp-content/uploads/2020/12/instagram-old.png?resize=1100%2C750&ssl=1"
@@ -32,13 +35,14 @@ const HomePage = () => {
         <>
           <NewReel addReel={addReel} />
           <h1>📷 Latest reels</h1>
-          <ReelList reels={reels} removeReel={removeReel} />
+          <ReelList className="reel-list" reels={reels} removeReel={removeReel} />
           <button className="logout-button" onClick={handleLogout}>
             Logout
           </button>
         </>
       ) : null}
     </section>
+    </div>
   );
 };
 
