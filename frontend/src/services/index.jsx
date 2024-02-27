@@ -132,3 +132,20 @@ export const deleteReelService = async ({ id, token }) => {
     throw new Error(json.message);
   }
 };
+export const likeReelService = async (id, token) => {
+  const response = await fetch(`${BASE_URL}/reels/${id}/like`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`, 
+    },
+  });
+
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+
+  return json.data; 
+};

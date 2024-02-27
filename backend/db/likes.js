@@ -1,6 +1,6 @@
 import { getConnection } from './getPool.js';
 
-const likeReel = async (user_id, reel_id) => {
+const isLiked= async (user_id, reel_id) => {
   let connection;
 
   try {
@@ -14,7 +14,7 @@ const likeReel = async (user_id, reel_id) => {
   }
 };
 
-const hasLikedReel = async (user_id, reel_id) => {
+const hasLiked = async (user_id, reel_id) => {
   let connection;
 
   try {
@@ -43,4 +43,4 @@ const unlikeReel = async (user_id, reel_id) => {
   }
 };
 
-export { likeReel, hasLikedReel, unlikeReel };
+export { isLiked, hasLiked, unlikeReel };
