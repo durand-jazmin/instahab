@@ -39,7 +39,7 @@ const NewReel = ({ addReel }) => {
   return (
     <>
      <form className="new-reel" onSubmit={handleForm}>
-      <legend>Add a new reel...</legend>
+      <legend className="add-reel">Add a new reel...</legend>
 
           <input type="text"
            name="text" 

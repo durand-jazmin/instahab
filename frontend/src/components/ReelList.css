@@ -1,19 +1,26 @@
-ul{
-    background-color: transparent;
-    list-style-type: none;
-    border: none;
+ul {
+  background-color: transparent;
+  list-style-type: none;
+  border: none;
 }
-li{
-    list-style-type: none;
-    justify-content: stretch;
+
+li {
+  list-style-type: none;
+  justify-content: stretch;
 }
 
 .reel-item {
-    display: flex;
-    align-items: center; 
+  display: flex;
+  align-items: center;
 }
-  
-  .like-button-container {
-    margin-left: auto; 
-  }
-  
+
+.like-button-container {
+  margin-left: auto;
+}
+
+.no-reels {
+  margin-left: 20px;
+  margin-top: 40px;
+  font-size: 17px;
+  text-align: center;
+}

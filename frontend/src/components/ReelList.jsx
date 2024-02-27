@@ -14,7 +14,7 @@ const ReelList = ({ reels, removeReel }) => {
       ))}
     </ul>
   ) : (
-    <p>There are no reels...</p>
+    <p className="no-reels">There are no reels...</p>
   );
 };
 

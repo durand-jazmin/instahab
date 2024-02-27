@@ -1,51 +1,49 @@
-
-  .like-button {
-    position: relative;
-    background-color:red;
-    border: none;
-    color: white;
-    padding: 0;
-    cursor: pointer;
+.like-button {
+  position: relative;
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 0;
+  cursor: pointer;
 }
 
 .like-button.active .heart {
-  background-color: red; 
+  background-color: red;
 }
 .heart {
-    position: relative;
-    width: 20px;
-    height: 20px;
-    background-color: grey;
-    clip-path: polygon(
-      50% 15%,
-      67% 32%,
-      85% 50%,
-      90% 70%,
-      85% 85%,
-      50% 95%,
-      15% 85%,
-      10% 70%,
-      15% 50%,
-      32% 32%
-    );
-  }
-  
-  .like-button.active .heart::before,
-  .like-button.active .heart::after {
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 20px;
-    background-color: red;
-  }
-  
-  .like-button.active .heart::before {
-    left: -4px;
-    transform: rotate(-45deg);
-  }
-  
-  .like-button.active .heart::after {
-    right: -4px;
-    transform: rotate(45deg);
-  }
-  
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background-color: grey;
+  clip-path: polygon(
+    50% 15%,
+    67% 32%,
+    85% 50%,
+    90% 70%,
+    85% 85%,
+    50% 95%,
+    15% 85%,
+    10% 70%,
+    15% 50%,
+    32% 32%
+  );
+}
+
+.like-button.active .heart::before,
+.like-button.active .heart::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 20px;
+  background-color: red;
+}
+
+.like-button.active .heart::before {
+  left: -4px;
+  transform: rotate(-45deg);
+}
+
+.like-button.active .heart::after {
+  right: -4px;
+  transform: rotate(45deg);
+}
