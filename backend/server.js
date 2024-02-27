@@ -19,9 +19,9 @@ import {
 } from './controllers/reels.js';
 
 import {
-  likeReelController,
+  isLikedController,
   unlikeReelController,
-  hasLikedReelController,
+hasLikedController
 } from './controllers/likes.js';
 
 import { authUser } from './middlewares/auth.js';
@@ -50,9 +50,9 @@ app.get('/reel/:id', getSingleReelController);
 app.delete('/reel/:id', authUser, deleteReelController);
 
 //Rutas de likes
-app.post('/reels/:reelId/like', authUser, likeReelController);
+app.post('/reels/:reelId/like', authUser, isLikedController);
 app.delete('/reels/:reelId/like', authUser, unlikeReelController);
-app.get('/reels/:reelId/hasLiked/:userId', hasLikedReelController);
+app.get('/reels/:reelId/hasLiked/:userId', hasLikedController);
 
 // Middleware de 404
 app.use((req, res) => {

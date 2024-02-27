@@ -10,7 +10,7 @@ import "./HomePage.css";
 
 const HomePage = () => {
   const navigate = useNavigate();
-  const { reels, error, loading, addReel, removeReel } = useReels();
+  const { reels, error, loading, reel, removeReel } = useReels();
   const { user, logout } = useContext(AuthContext);
 
   const handleLogout = async () => {
