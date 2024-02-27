@@ -31,6 +31,7 @@ async function main() {
         user_id INTEGER NOT NULL,
         text VARCHAR(280) NOT NULL,
         image VARCHAR(100),
+        likes DOUBLE DEFAULT 0,
         created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (user_id) REFERENCES users(id)
       );
@@ -42,8 +43,8 @@ async function main() {
         user_id INTEGER NOT NULL,
         reel_id INTEGER NOT NULL,
         created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-        FOREIGN KEY (user_id) REFERENCES users(id),
-        FOREIGN KEY (reel_id) REFERENCES reels(id)
+        FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+        FOREIGN KEY (reel_id) REFERENCES reels(id) ON DELETE CASCADE
       );
     `);
 
