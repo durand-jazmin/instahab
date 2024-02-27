@@ -36,17 +36,17 @@ const SignupPage = () => {
         </div>
         <div className="signup-form">
         <img
-          src="https://www.pngkey.com/png/full/828-8286178_mackeys-work-needs-no-elaborate-presentation-or-distracting.png"
+          src="https://i0.wp.com/www.dafontfree.io/wp-content/uploads/2020/12/instagram-old.png?resize=1100%2C750&ssl=1"
           alt="Logo"
           className="signup-logo"
         />
         <form onSubmit={handleSignUp}>
           <fieldset>
             <div className="input-group">
-              <label htmlFor="email">Email</label>
               <input
                 type="email"
                 id="email"
+                placeholder="Email"
                 name="email"
                 value={email}
                 required
@@ -54,25 +54,27 @@ const SignupPage = () => {
               />
             </div>
             <div className="input-group">
-              <label htmlFor="password">Password</label>
               <input
                 type="password"
                 id="password"
                 name="password"
+                placeholder="Password"
                 value={password}
                 required
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            <label htmlFor="confirmPassword">Confirm Password</label>
+            <div className="input-group">
             <input
               type="password"
               id="confirmPassword"
               name="confirmPassword"
+              placeholder="Confirm Password"
               value={confirmPassword}
               required
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
+            </div>
             <button className="signup-button">Sign Up</button>
             {error && <p>{error}</p>}
           </fieldset>
