@@ -36,7 +36,7 @@ const SignupPage = () => {
         </div>
         <div className="signup-form">
         <img
-          src="https://www.pngkey.com/png/full/828-8286178_mackeys-work-needs-no-elaborate-presentation-or-distracting.png"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVbi1SFIb9MQDGjq6xHhu7Qs41_H3FKRpLUvBH3kcgcw&s"
           alt="Logo"
           className="signup-logo"
         />

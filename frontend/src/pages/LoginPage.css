@@ -16,7 +16,7 @@
 
 .login-form {
     flex: 1;
-    text-align: left;
+    text-align: center;
     margin: 10px;
     padding: 10px;
 }
@@ -42,7 +42,7 @@
 
 .login-button {
     color: white;
-    margin-top: 2vw;
+    margin-top: 0.5vw;
     width: 42.3vw;
     height: 5vh;
     background-color: #2f80b4;
