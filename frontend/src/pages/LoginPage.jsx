@@ -42,22 +42,22 @@ const LoginPage = () => {
         <form onSubmit={handleForm}>
           <fieldset>
             <div className="input-group">
+              <label htmlFor="email">Email</label>
               <input
                 type="email"
                 name="email"
                 id="email"
-                placeholder="Email"
                 value={email}
                 required
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="input-group">
+              <label htmlFor="password">Password</label>
               <input
                 type="password"
                 name="pass"
                 id="pass"
-                placeholder="Password"
                 value={password}
                 required
                 onChange={(e) => setPassword(e.target.value)}

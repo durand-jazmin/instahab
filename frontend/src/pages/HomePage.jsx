@@ -1,5 +1,5 @@
-import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link,useNavigate } from "react-router-dom";
 import useReels from "../hooks/useReels";
 import ReelList from "../components/ReelList";
 import ErrorMessage from "../components/ErrorMessage";
@@ -7,11 +7,10 @@ import NewReel from "../components/NewReel";
 import { AuthContext } from "../context/AuthContext";
 import Loading from "../components/Loading";
 import "./HomePage.css";
-import NavBar from "../components/NavBar";
 
 const HomePage = () => {
   const navigate = useNavigate();
-  const { reels, error, loading, addReel, removeReel } = useReels();
+  const { reels, error, loading, reel, removeReel } = useReels();
   const { user, logout } = useContext(AuthContext);
 
   const handleLogout = async () => {
@@ -23,26 +22,30 @@ const HomePage = () => {
   if (error) return <ErrorMessage message={error} />;
 
   return (
-    <div>
-    <navBar />
     <section className="home-page-container">
-      <img
-        src="https://i0.wp.com/www.dafontfree.io/wp-content/uploads/2020/12/instagram-old.png?resize=1100%2C750&ssl=1"
+       {user ? (
+        <> 
+          <div className="left-column">
+         <img
+        src="https://www.pngkey.com/png/full/828-8286178_mackeys-work-needs-no-elaborate-presentation-or-distracting.png"
         alt="Instagram Logo"
         className="instagram-logo"
       />
-      {user ? (
-        <>
-          <NewReel addReel={addReel} />
-          <h1>📷 Latest reels</h1>
-          <ReelList className="reel-list" reels={reels} removeReel={removeReel} />
-          <button className="logout-button" onClick={handleLogout}>
-            Logout
-          </button>
+          <Link to={`/user/${user.id}`}> <img className="avatar"
+              src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
+              alt="Avatar"/></Link>
+        </div>
+        
+        <div className="center-column">
+          <ReelList reels={reels} removeReel={removeReel} />
+        </div>
+
+        <div className="right-column">
+           <button className="logout-button" onClick={handleLogout}>Logout</button>
+          </div>
         </>
       ) : null}
     </section>
-    </div>
   );
 };
 
