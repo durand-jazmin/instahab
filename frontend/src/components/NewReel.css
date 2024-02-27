@@ -1,17 +1,17 @@
-.new-reel {
-    max-width: 500px;
+  .new-reel {
+    width: 50%;
+    max-width: 50%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 15px;
     border: 1px solid #000;
-    color: #000;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   }
   
   h1 {
-    font-family: 'inria sans';
+    font-family: 'inria sans', sans-serif;
     font-size: 24px;
     margin-bottom: 20px;
+    margin-left: 20px;
   }
   
   .new-reel form {
@@ -19,36 +19,26 @@
     flex-direction: column;
   }
   
-  .new-reel label {
-    font-family: 'inria sans';
-    font-size: 18px;
-    margin-bottom: 8px;
-    margin-right: 10px;
-    color: #000; 
-  }
-  
   .new-reel input[type="text"] {
-    font-family: 'inria sans';
+    font-family: 'inria sans', sans-serif;
     padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px 0;
     border: 1px solid #000;
     border-radius: 5px;
     background-color: #fff;
     color: #000;
-    width: 400px;
+    width: calc(100% - 20px);
   }
 
   .new-reel input[type="file"] {
-    font-family: 'inria sans';
+    font-family: 'inria sans', sans-serif;
     padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px 0;
     border: 1px solid #000;
     border-radius: 5px;
     background-color: #fff;
     color: #000;
-    width: 385px;
+    width: calc(100% - 20px);
   }
   
   .new-reel input[type="file"] {
@@ -56,7 +46,7 @@
   }
   
   .new-reel button {
-    font-family: 'inria sans';
+    font-family: 'inria sans', sans-serif;
     padding: 10px 20px;
     background-color: #3897f0;
     color: #fff;
@@ -66,7 +56,6 @@
     cursor: pointer;
     transition: background-color 0.3s;
     margin-top: 10px;
-    width: 499px;
   }
   
   .new-reel button:hover {

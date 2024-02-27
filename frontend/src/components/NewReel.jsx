@@ -28,15 +28,13 @@ const NewReel = ({ addReel }) => {
   };
 
   return (
-    <>
+    <div className="new-reel-container">
       <h1>📸 New reel</h1>
       <form className="new-reel" onSubmit={handleForm}>
-        <fieldset>
-          <label htmlFor="text">Text</label>
-          <input type="text" name="text" id="text" required />
+        <fieldset className="form-field">
+          <input type="text" name="text" id="text" placeholder="Enter text..." required />
         </fieldset>
-        <fieldset>
-          <label htmlFor="image">Image</label>
+        <fieldset className="form-field">
           <input
             type="file"
             name="image"
@@ -44,7 +42,7 @@ const NewReel = ({ addReel }) => {
             accept="image/*"
             onChange={(e) => setImage(e.target.files[0])}
           />
-          {image ? (
+          {image && (
             <figure>
               <img
                 src={URL.createObjectURL(image)}
@@ -52,13 +50,13 @@ const NewReel = ({ addReel }) => {
                 alt="Preview"
               />
             </figure>
-          ) : null}
+          )}
         </fieldset>
         <button>Create reel</button>
         {error ? <p>{error}</p> : null}
         {loading ? <p>Posting reel...</p> : null}
       </form>
-    </>
+    </div>
   );
 };
 
