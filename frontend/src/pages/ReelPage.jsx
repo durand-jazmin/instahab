@@ -4,7 +4,6 @@ import Reel from '../components/Reel';
 import ErrorMessage from '../components/ErrorMessage';
 import Loading from '../components/Loading';
 import './ReelPage.css'
-import { logInUserService } from '../services';
 
 const ReelPage = () => {
   const { id } = useParams();

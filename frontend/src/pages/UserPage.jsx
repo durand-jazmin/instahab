@@ -33,7 +33,9 @@ const UserPage = () => {
         <h1>Profile:</h1>
         <p className="email">Email: {user.email}</p>
         <p className="id">Id: {user.id}</p>
-        <p className="registered">Registered on: {new Date(user.created_at).toLocaleDateString()}</p>
+        <p className="registered">
+          Registered on: {new Date(user.created_at).toLocaleDateString()}
+        </p>
       </div>
 
       {currentUser && currentUser.id === user.id && (
