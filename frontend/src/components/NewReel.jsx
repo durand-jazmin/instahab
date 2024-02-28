@@ -39,7 +39,11 @@ const NewReel = ({ addReel }) => {
   return (
     <>
      <form className="new-reel" onSubmit={handleForm}>
+<<<<<<< HEAD
       <legend className="add-reel">Add a new reel...</legend>
+=======
+      <legend>Add a new reel...</legend>
+>>>>>>> d5add22228ceffde77da4c53a61c0e8e3793dd2b
 
           <input type="text"
            name="text" 

@@ -1,10 +1,15 @@
 .new-reel {
   max-width: 400px;
+<<<<<<< HEAD
   margin: 0 auto;
+=======
+  margin:auto;
+>>>>>>> d5add22228ceffde77da4c53a61c0e8e3793dd2b
   padding: 20px;
   color: black;
   border-radius: 10px;
 }
+<<<<<<< HEAD
 
 .add-reel {
   margin: 10px;
@@ -39,6 +44,37 @@
 
 .new-reel button:hover {
   background-color: green;
+=======
+.new-reel form {
+  display: flex;
+  flex-direction: column;
+}
+  
+.new-reel input {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  color: #000;
+  width: 400px;
+ cursor: pointer;
+ border: 1px solid lightgray;
+}
+.new-reel button {
+  padding: 10px ;
+  margin: 10px;
+  color: white;
+  width: 400px;
+  background-color: #3897f0; 
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+}
+
+.new-reel button:hover {
+  background-color:green;
+>>>>>>> d5add22228ceffde77da4c53a61c0e8e3793dd2b
 }
 
 .new-reel p {

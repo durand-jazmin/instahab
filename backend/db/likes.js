@@ -5,6 +5,12 @@ const isLiked= async (user_id, reel_id) => {
 
   try {
     connection = await getConnection();
+    const [[reel]] = await connection.query('SELECT * FROM reels WHERE id = ?', [reel_id]);
+
+    if (!reel) {
+      throw new Error(`El reel con id ${reel_id} no existe en la tabla reels`);
+    }
+
     await connection.query('INSERT INTO likes (user_id, reel_id) VALUES (?, ?)', [user_id, reel_id]);
   } catch (error) {
     console.error(error);
