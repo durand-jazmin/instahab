@@ -1,16 +1,20 @@
+import React from 'react';
 import Reel from './Reel';
+import './ReelList.css';
 
 const ReelList = ({ reels, removeReel }) => {
   return reels.length ? (
     <ul className='reel-list'>
       {reels.map((reel) => (
-        <li key={reel.id}>
-          <Reel reel={reel} removeReel={removeReel} />
+        <li key={reel.id} className='reel-item'>
+          <Reel  reel={reel} removeReel={removeReel} />
+          <div className="like-button-container">
+           </div>
         </li>
       ))}
     </ul>
   ) : (
-    <p>There are no reels...</p>
+    <p className="no-reels">There are no reels...</p>
   );
 };
 

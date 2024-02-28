@@ -1,17 +1,17 @@
-import React, { useContext } from 'react';
-import { AuthContext } from '../context/AuthContext';
-import HomePage from '../pages/HomePage'; 
-import { Navigate } from 'react-router-dom';
+import React, { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
+import HomePage from "../pages/HomePage";
+import { Navigate } from "react-router-dom";
 
 const Auth = () => {
   const { user, logout } = useContext(AuthContext);
 
   return user ? (
     <div>
-      <HomePage /> 
+      <HomePage />
     </div>
   ) : (
-    <Navigate to="/login" replace={true} /> 
+    <Navigate to="/login" replace={true} />
   );
 };
 

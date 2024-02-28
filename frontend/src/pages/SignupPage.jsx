@@ -19,7 +19,7 @@ const SignupPage = () => {
 
     try {
       await signUpUserService({ email, password });
-      navigate("/user");
+      navigate("/login");
     } catch (error) {
       setError(error.message);
     }
@@ -36,47 +36,44 @@ const SignupPage = () => {
         </div>
         <div className="signup-form">
         <img
-          src="https://i0.wp.com/www.dafontfree.io/wp-content/uploads/2020/12/instagram-old.png?resize=1100%2C750&ssl=1"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVbi1SFIb9MQDGjq6xHhu7Qs41_H3FKRpLUvBH3kcgcw&s"
           alt="Logo"
           className="signup-logo"
         />
         <form onSubmit={handleSignUp}>
           <fieldset>
             <div className="input-group">
+
               <input
                 type="email"
-                id="email"
                 placeholder="Email"
+                id="email"
                 name="email"
                 value={email}
                 required
                 onChange={(e) => setEmail(e.target.value)}
               />
-            </div>
-            <div className="input-group">
               <input
                 type="password"
+                placeholder="Password"
                 id="password"
                 name="password"
-                placeholder="Password"
                 value={password}
                 required
                 onChange={(e) => setPassword(e.target.value)}
               />
-            </div>
-            <div className="input-group">
-            <input
+              <input
               type="password"
+              placeholder="Confirm Password"
               id="confirmPassword"
               name="confirmPassword"
-              placeholder="Confirm Password"
               value={confirmPassword}
               required
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
-            </div>
             <button className="signup-button">Sign Up</button>
             {error && <p>{error}</p>}
+            </div>
           </fieldset>
         </form>
         <div className="signup-link">

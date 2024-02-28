@@ -16,7 +16,6 @@ const LoginPage = () => {
 
     try {
       const token = await logInUserService({ email, password });
-
       login(token);
       navigate("/");
     } catch (error) {
@@ -35,36 +34,36 @@ const LoginPage = () => {
       </div>
       <div className="login-form">
         <img
-          src="https://i0.wp.com/www.dafontfree.io/wp-content/uploads/2020/12/instagram-old.png?resize=1100%2C750&ssl=1"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVbi1SFIb9MQDGjq6xHhu7Qs41_H3FKRpLUvBH3kcgcw&s"
           alt="Logo"
           className="login-logo"
         />
         <form onSubmit={handleForm}>
           <fieldset>
             <div className="input-group">
+            
               <input
                 type="email"
+                placeholder="Email"
                 name="email"
                 id="email"
-                placeholder="Email"
                 value={email}
                 required
                 onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div className="input-group">
+              />           
               <input
                 type="password"
+                placeholder="Password"
                 name="pass"
                 id="pass"
-                placeholder="Password"
                 value={password}
                 required
                 onChange={(e) => setPassword(e.target.value)}
               />
-            </div>
+           
             <button className="login-button">Login</button>
             {error ? <p>{error}</p> : null}
+          </div>
           </fieldset>
         </form>
         <div className="signup-link">
