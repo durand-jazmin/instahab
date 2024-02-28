@@ -8,8 +8,10 @@ import NotFoundPage from "./pages/NotFoundPage";
 import UserPage from "./pages/UserPage";
 import Auth from "./components/Auth";
 
+
 function App() {
   return (
+
     <div className="App">
       <Routes>
         {/* Ruta para el componente Auth */}
@@ -23,6 +25,7 @@ function App() {
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </div>
+
   );
 }
 

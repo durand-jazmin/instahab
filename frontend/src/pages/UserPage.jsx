@@ -22,7 +22,7 @@ const UserPage = () => {
   return (
     <div className="grid-container">
       <div className="link-home">
-        <Link to="/">⌂ Home</Link>
+        <Link to="/">⌂ </Link>
       </div>
       <div className="profile-header">
         <img

@@ -10,8 +10,8 @@ import "./HomePage.css";
 const HomePage = () => {
   const navigate = useNavigate();
   const { reels, error, loading, reel, removeReel } = useReels();
-  const { user, logout } = useContext(AuthContext);
-
+  const { user,counter, increment, decrement,reset, logout } = useContext(AuthContext);
+  
   const handleLogout = async () => {
     await logout();
     navigate("/login");
@@ -24,26 +24,27 @@ const HomePage = () => {
     <section className="home-page-container">
        {user ? (
         <> 
-          <div className="left-column">
-         <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVbi1SFIb9MQDGjq6xHhu7Qs41_H3FKRpLUvBH3kcgcw&s"
-        alt="Instagram Logo"
-        className="instagram-logo"
-      />
-          <Link to={`/user/${user.id}`}> <img className="avatar"
-              src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
-              alt="Avatar"/></Link>
-        </div>
+          <div className="left-column"> 
+               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVbi1SFIb9MQDGjq6xHhu7Qs41_H3FKRpLUvBH3kcgcw&s" alt="Instagram Logo" className="instagram-logo"/> 
+               <Link to={`/user/${user.id}`}> <img className="avatar" src="https://i.pravatar.cc/150?u=a042581f4e29026704d" alt="Avatar"/></Link>
+          </div>
         
         <div className="center-column">
+          <div className="counter">
+            <h4>{counter}</h4>
+          <button onClick={ () => increment()  }>+</button>
+          </div>
+          
           <ReelList reels={reels} removeReel={removeReel} />
+          
         </div>
 
         <div className="right-column">
            <button className="logout-button" onClick={handleLogout}>Logout</button>
-          </div>
+        </div>
         </>
-      ) : null}
+      ) 
+      : null}
     </section>
   );
 };
