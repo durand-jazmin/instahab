@@ -1,12 +1,12 @@
 import { createContext, useEffect, useState } from 'react';
 import { getMyDataService } from '../services/index';
 
-
 export const AuthContext = createContext(null);
 
 export const AuthContextProviderComponent = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem('token'));
   const [user, setUser] = useState(null);
+  const [like, setLike] = useState(0) 
 
   useEffect(() => {
     localStorage.setItem('token', token);
@@ -38,8 +38,13 @@ export const AuthContextProviderComponent = ({ children }) => {
     }
   };
 
+  const toggleLike= () => {
+    setLike(prev => (prev === 1 ? 0 : 1));
+};
+
+
   return (
-    <AuthContext.Provider value={{ token, user, login, logout }}>
+    <AuthContext.Provider value={{ token, user,like,toggleLike, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

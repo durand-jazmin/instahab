@@ -29,8 +29,8 @@ async function main() {
       CREATE TABLE reels (
         id INTEGER PRIMARY KEY AUTO_INCREMENT,
         user_id INTEGER NOT NULL,
-        text VARCHAR(280) NOT NULL,
-        image VARCHAR(100),
+        text VARCHAR(100) ,
+        image VARCHAR(100) NOT NULL,
         likes DOUBLE DEFAULT 0,
         created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (user_id) REFERENCES users(id)
