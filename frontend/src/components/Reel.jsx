@@ -33,7 +33,6 @@ const Reel = ({ user, reel, removeReel }) => {
 
   return (
   <article className="reel">
-     
   <div className="user-info">
         <img src={`https://source.unsplash.com/random/30x30?sig=${reel.user_id}`} alt="User Profile"/>
       <div className="user-email">Usuario: {reel.email}</div>
@@ -44,7 +43,7 @@ const Reel = ({ user, reel, removeReel }) => {
         <p>Comment: {reel.text}</p>
       <div className="nav"><Link to={`/reel/${reel.id}`}>Created at: {new Date(reel.created_at).toLocaleDateString()}</Link></div>  
          {error && <p>Error: {error}</p>}
-        <p>Total likes: {like}</p> 
+
         <button onClick={toggleLike}>{like === 1 ? "Unlike" : "Like"}</button>
     </div>
   </article>

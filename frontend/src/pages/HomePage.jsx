@@ -10,7 +10,7 @@ import "./HomePage.css";
 const HomePage = () => {
   const navigate = useNavigate();
   const { reels, error, loading, reel, removeReel } = useReels();
-  const { user,counter, increment, decrement,reset, logout } = useContext(AuthContext);
+  const { user,like,toggleLike, logout } = useContext(AuthContext);
   
   const handleLogout = async () => {
     await logout();
@@ -30,10 +30,6 @@ const HomePage = () => {
           </div>
         
         <div className="center-column">
-          <div className="counter">
-            <h4>{counter}</h4>
-          <button onClick={ () => increment()  }>+</button>
-          </div>
           
           <ReelList reels={reels} removeReel={removeReel} />
           
