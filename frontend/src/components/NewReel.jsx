@@ -1,16 +1,15 @@
-import React,{ useContext, useState } from 'react';
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from '../context/AuthContext';
-import { sendReelService } from '../services'; 
-import './NewReel.css';
+import { AuthContext } from "../context/AuthContext";
+import { sendReelService } from "../services";
+import "./NewReel.css";
 
 const NewReel = ({ addReel }) => {
   const { token } = useContext(AuthContext);
   const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-  const navigate = useNavigate(); 
-
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleForm = async (e) => {
     e.preventDefault();
@@ -22,13 +21,12 @@ const NewReel = ({ addReel }) => {
 
       setLoading(true);
       const data = new FormData(e.target);
-      const reel = await sendReelService({ data, token }); 
-      addReel(reel); 
+      const reel = await sendReelService({ data, token });
+      addReel(reel);
 
       e.target.reset();
       setImage(null);
-      navigate('/');
-
+      navigate("/");
     } catch (error) {
       setError(error.message);
     } finally {
@@ -38,37 +36,33 @@ const NewReel = ({ addReel }) => {
 
   return (
     <>
-     <form className="new-reel" onSubmit={handleForm}>
-<<<<<<< HEAD
-      <legend className="add-reel">Add a new reel...</legend>
-=======
-      <legend>Add a new reel...</legend>
->>>>>>> d5add22228ceffde77da4c53a61c0e8e3793dd2b
+      <form className="new-reel" onSubmit={handleForm}>
+        <legend className="add-reel">Add a new reel...</legend>
+        <input
+          type="text"
+          name="text"
+          id="text"
+          placeholder="Tell us about ..."
+        />
 
-          <input type="text"
-           name="text" 
-           id="text" 
-           placeholder='Tell us about ...' 
-           />
-
-          <input
-            type="file"
-            placeholder='File'
-            name="image"
-            id="image"
-            accept="image/*"
-            required
-            onChange={(e) => setImage(e.target.files[0])}
-          />
-          {image ? (
-            <figure>
-              <img
-                src={URL.createObjectURL(image)}
-                style={{ width: '50px' }}
-                alt="Preview"
-              />
-            </figure>
-          ) : null}
+        <input
+          type="file"
+          placeholder="File"
+          name="image"
+          id="image"
+          accept="image/*"
+          required
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+        {image ? (
+          <figure>
+            <img
+              src={URL.createObjectURL(image)}
+              style={{ width: "50px" }}
+              alt="Preview"
+            />
+          </figure>
+        ) : null}
 
         <button>Create new reel</button>
         {error ? <p>Error: {error}</p> : null}

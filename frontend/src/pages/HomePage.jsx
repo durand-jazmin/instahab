@@ -26,11 +26,7 @@ const HomePage = () => {
         <> 
           <div className="left-column">
          <img
-<<<<<<< HEAD
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVbi1SFIb9MQDGjq6xHhu7Qs41_H3FKRpLUvBH3kcgcw&s"
-=======
-        src="https://www.pngkey.com/png/full/828-8286178_mackeys-work-needs-no-elaborate-presentation-or-distracting.png"
->>>>>>> d5add22228ceffde77da4c53a61c0e8e3793dd2b
         alt="Instagram Logo"
         className="instagram-logo"
       />

@@ -41,11 +41,7 @@ const LoginPage = () => {
         <form onSubmit={handleForm}>
           <fieldset>
             <div className="input-group">
-<<<<<<< HEAD
             
-=======
-              <label htmlFor="email">Email</label>
->>>>>>> d5add22228ceffde77da4c53a61c0e8e3793dd2b
               <input
                 type="email"
                 placeholder="Email"
@@ -54,14 +50,7 @@ const LoginPage = () => {
                 value={email}
                 required
                 onChange={(e) => setEmail(e.target.value)}
-<<<<<<< HEAD
               />           
-=======
-              />
-            </div>
-            <div className="input-group">
-              <label htmlFor="password">Password</label>
->>>>>>> d5add22228ceffde77da4c53a61c0e8e3793dd2b
               <input
                 type="password"
                 placeholder="Password"
