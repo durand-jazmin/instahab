@@ -9,7 +9,11 @@ const isLikedController = async (req, res, next) => {
 
     res.status(201).json({ message: 'Reel liked' });
   } catch (error) {
-    next(error);
+    if (error.message === 'El usuario ya ha dado like a este reel') {
+      res.status(409).json({ message: error.message });
+    } else {
+      next(error);
+    }
   }
 };
 
@@ -22,7 +26,11 @@ const unlikeReelController = async (req, res, next) => {
 
     res.json({ message: 'Reel unliked' });
   } catch (error) {
-    next(error);
+    if (error.message === 'El usuario no ha dado like a este reel') {
+      res.status(404).json({ message: error.message });
+    } else {
+      next(error);
+    }
   }
 };
 
@@ -33,7 +41,7 @@ const hasLikedController = async (req, res, next) => {
 
     const hasLiked = await isLiked(userId, reelId);
 
-    res.json({ isLiked });
+    res.json({ isLiked: hasLiked });
   } catch (error) {
     next(error);
   }
