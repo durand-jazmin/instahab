@@ -8,20 +8,13 @@
 
 .reel-content {
   text-align: center;
-<<<<<<< HEAD
   margin-bottom: 10px;
-=======
-  margin-bottom: 10px; 
->>>>>>> d5add22228ceffde77da4c53a61c0e8e3793dd2b
 }
 
 .reel p {
   margin: 0;
   padding: 10px;
-<<<<<<< HEAD
   font-size: 15px;
-=======
->>>>>>> d5add22228ceffde77da4c53a61c0e8e3793dd2b
 }
 
 .reel img {
@@ -34,15 +27,11 @@
   display: flex;
   align-items: center;
   padding: 10px;
-<<<<<<< HEAD
   justify-content: space-evenly;
 }
 
 .user-email {
   font-size: 15px;
-=======
- justify-content: space-evenly;
->>>>>>> d5add22228ceffde77da4c53a61c0e8e3793dd2b
 }
 
 .user-info img {
@@ -56,17 +45,8 @@
   font-weight: bold;
 }
 
-<<<<<<< HEAD
 .nav {
   font-size: 15px;
-=======
-.timestamp {
-  color: #ccc;
-  font-size: 0.8em;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px;
->>>>>>> d5add22228ceffde77da4c53a61c0e8e3793dd2b
 }
 
 .reel button {
@@ -75,11 +55,7 @@
   cursor: pointer;
   padding: 5px 10px;
   margin: 5px;
-<<<<<<< HEAD
   font-size: 1em;
-=======
-  font-size: 0.9em;
->>>>>>> d5add22228ceffde77da4c53a61c0e8e3793dd2b
   color: #8e8e8e;
 }
 

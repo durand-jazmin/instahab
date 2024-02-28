@@ -1,68 +1,63 @@
 .login-container {
-    display: flex;
-    padding: 5% 10%;
-    border: none;
+  display: flex;
+  padding: 5% 10%;
+  border: none;
 }
 
 .auth__left {
-    margin-right: 2rem; 
+  margin-right: 2rem;
 }
 
 .login-screenshot {
-    width: 100%;
-    height: 100%;
-    margin-top: 8px;
+  width: 100%;
+  height: 100%;
+  margin-top: 8px;
 }
 
 .login-form {
-    flex: 1;
-    text-align: center;
-    margin: 10px;
-    padding: 10px;
+  flex: 1;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
 }
 
 .login-logo {
-    width: 20vw;
+  width: 20vw;
 }
 
 .input-group {
-    margin: 1rem; 
-    padding: 1rem;
+  margin: 1rem;
+  padding: 1rem;
 }
 
-
 .input-group input {
-    padding: 1vw;
-    margin: 5px;
-    border: 1px solid grey;
-    border-radius: 3px;
-    width: 40vw;
-
+  padding: 1vw;
+  margin: 5px;
+  border: 1px solid grey;
+  border-radius: 3px;
+  width: 40vw;
 }
 
 .login-button {
-    color: white;
-    margin-top: 0.5vw;
-    width: 42.3vw;
-    height: 5vh;
-    background-color: #2f80b4;
-    border-radius: 5px;
+  color: white;
+  margin-top: 0.5vw;
+  width: 42.3vw;
+  height: 5vh;
+  background-color: #2f80b4;
+  border-radius: 5px;
 }
 
 button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .signup-link {
-    text-align: center;
-    color:black;
+  text-align: center;
+  color: black;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> d5add22228ceffde77da4c53a61c0e8e3793dd2b
-a{
-    color:  #2f80b4;
-    text-decoration: none;
-    font: 1em ;
+a {
+  color: #2f80b4;
+  text-decoration: none;
+  font: 1em;
 }
