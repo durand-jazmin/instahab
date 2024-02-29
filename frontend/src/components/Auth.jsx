@@ -5,7 +5,7 @@ import { Navigate } from "react-router-dom";
 
 const Auth = () => {
   const { user } = useContext(AuthContext);
-  console.log(user);
+
 
   return user ? (
     <div>
