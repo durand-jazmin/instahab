@@ -31,9 +31,9 @@ import {
     try {
       const { text } = req.body;
   
-      if (!text || text.length > 280) {
+      if (!text || text.length > 100) {
         throw generateError(
-          'El texto del reel debe existir y ser menor de 280 caracteres',
+          'El texto del reel debe existir y ser menor de 100 caracteres',
           400
         );
       }

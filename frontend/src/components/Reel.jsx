@@ -1,19 +1,19 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
+import React,{ useContext, useState,useEffect } from "react";
 import { deleteReelService } from "../services";
 import { AuthContext } from "../context/AuthContext";
-import LikeButton from "./Like";
+import LikesComponent from "./LikesComponent";
 import "./Reel.css";
 
 const base_URL = "http://localhost:3000";
 
-const Reel = ({ user, reel, removeReel }) => {
-
+const Reel = ({user, reel, removeReel }) => {
+ 
   const navigate = useNavigate();
 
   const { token, like,toggleLike } = useContext(AuthContext);
 
-  const { isAuthenticated } = useContext(AuthContext);
+  const {isAuthenticated } = useContext(AuthContext);
 
   const [error, setError] = useState("");
 
@@ -40,12 +40,12 @@ const Reel = ({ user, reel, removeReel }) => {
   </div>
     <div className="reel-content"> 
         {reel.image && ( <img src={`${base_URL}/uploads/${reel.image}`} alt={reel.text} /> )}
-        <p>Comment: {reel.text}</p>
+        <p>Comment: {reel.text}</p>  
+        <LikesComponent reel={reel} />
       <div className="nav"><Link to={`/reel/${reel.id}`}>Created at: {new Date(reel.created_at).toLocaleDateString()}</Link></div>  
          {error && <p>Error: {error}</p>}
-
-        <button onClick={toggleLike}>{like === 1 ? "Unlike" : "Like"}</button>
-    </div>
+      
+        </div>
   </article>
   );
 };
