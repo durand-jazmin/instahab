@@ -1,4 +1,4 @@
-.grid-container {
+.gridContainer {
   display: grid;
   grid-template-columns: 4;
   grid-template-rows: auto;
@@ -6,17 +6,28 @@
   font-family: "Courier New", Courier, monospace;
 }
 
-.link-home {
-  font-size: 2em;
-  grid-row: 0.5;
-  grid-column: 1;
-  padding: 10px;
-  margin: 10px;
-  color: #000;
-  font-family: "Courier New", Courier, monospace;
+.linkHome {
+  position: relative;
+  display: inline-block; /* Para que el tamaño del contenedor se ajuste al contenido */
+  width: 50px; /* Ajusta el ancho según sea necesario */
+  height: 50px; /* Ajusta la altura según sea necesario */
+  border-radius: 50%; /* Para hacer que el fondo tenga forma redonda */
+  background-color: black; /* Color de fondo del círculo */
+  padding: 10px; /* Ajusta el relleno según sea necesario */
 }
 
-.profile-header {
+.linkHome i {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white; /* Color del icono */
+  font-size: 2em; /* Tamaño del icono */
+}
+
+
+.profileHeader {
   grid-row: 2;
   grid-column: span 1;
   justify-self: center;
@@ -30,14 +41,14 @@
   width: 100px;
 }
 
-.reels-page {
+.reelsPage {
   display: block;
   justify-content: center;
   align-items: center;
 }
 
 @media screen and (max-width: 768px) {
-  .profile-section {
+  .profileSection {
     align-items: flex-start;
   }
 }

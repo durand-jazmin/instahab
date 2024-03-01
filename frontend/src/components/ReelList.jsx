@@ -1,8 +1,7 @@
-import React,{useContext,useState,useEffect} from 'react';
+import React from 'react';
 import Reel from './Reel';
 import './ReelList.css';
-import { AuthContext } from '../context/AuthContext';
-import LikesComponent from './LikesComponent';
+
 
 const ReelList = ({ reels, removeReel }) => {
   console.log(reels);
