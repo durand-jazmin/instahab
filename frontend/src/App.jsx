@@ -7,13 +7,15 @@ import ReelPage from "./pages/ReelPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import UserPage from "./pages/UserPage";
 import Auth from "./components/Auth";
-
+import ErrorBoundary from "./components/ErrorBoundary";
 
 function App() {
   return (
 
     <div className="App">
+
       <Routes>
+        
         {/* Ruta para el componente Auth */}
         <Route path="/" element={<Auth />} />
 

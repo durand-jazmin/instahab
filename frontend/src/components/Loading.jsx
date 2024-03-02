@@ -1,10 +1,11 @@
+import React from 'react';
 import './Loading.css'
 
 const Loading = () => {
-    return 
+    return (
     <div className="loader">
-      Loading...
-    </div>;
-  };
+      Loading ...
+    </div>
+      )};
 
 export default Loading;

@@ -5,19 +5,21 @@ import useLikes from '../hooks/useLikes';
 import './LikesComponent.css';
 
 
-const LikesComponent = ({reel}) => {
-  const { totalLikes, toggleLike } = useContext(AuthContext);
+export const LikesComponent = ({reel}) => {
+  const { totalLikes } = useContext(AuthContext);
   
-  const handleLikeClick = () => {
-    toggleLike(reel.id);
-  };
-
   return (
-    <div>
-      <p className='totalLikes'>Likes: {totalLikes}</p>
-      <button className="like-button" onClick={handleLikeClick}>Like</button>
-      </div>
+          <p className='totalLikes'>Likes: {totalLikes}</p>   
   );
 };
 
-export default LikesComponent;
+export const LikeButton = ({ reel }) => {
+  const { toggleLike } = useContext(AuthContext);
+
+  const handleLikeClick = () => {
+    toggleLike(reel.id);
+  };
+  return (
+      <button className="likeButton" onClick={handleLikeClick}>Like</button>
+  );
+};

@@ -28,7 +28,7 @@ const UserPage = () => {
         <img
           className="avatar"
           src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
-          alt="Avatar"
+          alt={`Avatar${user.id}`}
         />
         <h1>Profile:</h1>
         <p className="email">Email: {user.email}</p>

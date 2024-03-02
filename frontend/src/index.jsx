@@ -9,7 +9,7 @@ const root = document.getElementById("root");
 const rootInstance = createRoot(root);
 rootInstance.render(
   <React.StrictMode>
-  <ErrorBoundary> 
+  <ErrorBoundary fallback= "Oooops!! There was an error" > 
     <AuthContextProviderComponent>
       <BrowserRouter>
         <App />

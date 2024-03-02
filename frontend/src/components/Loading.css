@@ -1,7 +1,10 @@
-.loader {
 
-    width: 100px;
-    height: 100px;
+.loader {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 10px solid #f3f3f3;
     border-top: 4px solid white;
     border-radius: 50%; 
@@ -9,7 +12,7 @@
     border-right-color: lightgray;
     border-bottom-color:gray ;
     animation: spin 1s linear infinite; 
-    margin: auto; 
+    margin: auto;
     padding: 100px;
  
   }
