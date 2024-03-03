@@ -1,4 +1,4 @@
-.grid-container {
+.gridContainer {
   display: grid;
   grid-template-columns: 4;
   grid-template-rows: auto;
@@ -6,17 +6,28 @@
   font-family: "Courier New", Courier, monospace;
 }
 
-.link-home {
-  font-size: 2em;
-  grid-row: 0.5;
-  grid-column: 1;
+.linkHome {
+  position: relative;
+  display: inline-block; 
+  width: 50px; 
+  height: 50px;
+  border-radius: 50%; 
+  background-color: black;
   padding: 10px;
-  margin: 10px;
-  color: #000;
-  font-family: "Courier New", Courier, monospace;
 }
 
-.profile-header {
+.linkHome i {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white; 
+  font-size: 2em; 
+}
+
+
+.profileHeader {
   grid-row: 2;
   grid-column: span 1;
   justify-self: center;
@@ -30,14 +41,14 @@
   width: 100px;
 }
 
-.reels-page {
+.reelsPage {
   display: block;
   justify-content: center;
   align-items: center;
 }
 
 @media screen and (max-width: 768px) {
-  .profile-section {
+  .profileSection {
     align-items: flex-start;
   }
 }

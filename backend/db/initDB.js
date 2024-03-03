@@ -31,7 +31,7 @@ async function main() {
         user_id INTEGER NOT NULL,
         text VARCHAR(280) NOT NULL,
         image VARCHAR(100),
-        likes DOUBLE DEFAULT 0,
+        likes INTEGER DEFAULT 0,
         created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (user_id) REFERENCES users(id)
       );

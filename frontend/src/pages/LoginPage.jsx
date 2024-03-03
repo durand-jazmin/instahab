@@ -24,23 +24,23 @@ const LoginPage = () => {
   };
 
   return (
-    <section className="login-container">
+    <section className="loginContainer">
       <div className="auth__left">
         <img
           src="https://i.imgur.com/P3Vm1Kq.png"
           alt="Instagram Screenshots"
-          className="login-screenshot"
+          className="loginScreenshot"
         />
       </div>
-      <div className="login-form">
+      <div className="loginForm">
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVbi1SFIb9MQDGjq6xHhu7Qs41_H3FKRpLUvBH3kcgcw&s"
           alt="Logo"
-          className="login-logo"
+          className="loginLogo"
         />
         <form onSubmit={handleForm}>
           <fieldset>
-            <div className="input-group">
+            <div className="inputGroup">
             
               <input
                 type="email"
@@ -61,12 +61,12 @@ const LoginPage = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
            
-            <button className="login-button">Login</button>
+            <button className="loginButton">Login</button>
             {error ? <p>{error}</p> : null}
           </div>
           </fieldset>
         </form>
-        <div className="signup-link">
+        <div className="signupLink">
           <p>
             Don't you have an account?{' '}<Link to="/user">Sign up</Link>
           </p>
