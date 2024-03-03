@@ -4,13 +4,12 @@ import './ReelList.css';
 
 
 const ReelList = ({ reels, removeReel }) => {
-  console.log(reels);
+  //console.log(reels);
   return reels.length ? (
     <ul className='reel-list'>
-
       {reels.map((reel) => (
         <li key={reel.id} className='reel-item'>
-          <Reel  reel={reel} removeReel={removeReel} />
+          <Reel reel={reel} removeReel={removeReel} />
         </li>
       ))}
     </ul>

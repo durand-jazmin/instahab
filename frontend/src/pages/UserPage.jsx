@@ -22,7 +22,10 @@ const UserPage = () => {
   return (
     <div className="gridContainer">
       <div className="linkHome">
-        <Link to="/"> <i class="material-icons">home</i> </Link>
+        <Link to="/">
+          {" "}
+          <i class="material-icons">home</i>
+        </Link>
       </div>
       <div className="profileHeader">
         <img

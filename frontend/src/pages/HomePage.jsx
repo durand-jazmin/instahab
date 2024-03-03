@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import useReels from "../hooks/useReels";
-import ReelList from "../components/ReelList";
 import ErrorMessage from "../components/ErrorMessage";
 import { AuthContext } from "../context/AuthContext";
 import Loading from "../components/Loading";
