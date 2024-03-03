@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import useReels from "../hooks/useReels";
-import ReelList from "../components/ReelList";
 import ErrorMessage from "../components/ErrorMessage";
 import { AuthContext } from "../context/AuthContext";
 import Loading from "../components/Loading";
@@ -12,8 +11,9 @@ const HomePage = () => {
   const navigate = useNavigate();
   const { reels, error, loading, removeReel } = useReels();
   const { user, like, toggleLike, logout } = useContext(AuthContext);
+
   const [searchTerm, setSearchTerm] = useState("");
-  
+
   const handleLogout = async () => {
     await logout();
     navigate("/login");
@@ -47,7 +47,7 @@ const HomePage = () => {
           </div>
 
           <div className="center-column">
-            <SearchBar />
+            <SearchBar className="searchbar" />
           </div>
 
           <div className="right-column">
@@ -56,8 +56,7 @@ const HomePage = () => {
             </button>
           </div>
         </>
-      ) 
-      : null}
+      ) : null}
     </section>
   );
 };

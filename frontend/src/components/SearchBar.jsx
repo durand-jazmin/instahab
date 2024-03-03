@@ -1,22 +1,19 @@
 import React, { useState, useEffect } from "react";
 import Reel from "./Reel";
+import "./SearchBar.css";
 
-const SearchBar = () => {
-  //setear los hooks useState
+const SearchBar = ({ removeReel }) => {
   const [reels, setReels] = useState([]);
   const [search, setSearch] = useState("");
 
-  //función para buscar los reels
   const BASE_URL = "http://localhost:3000";
 
   const searchReels = async () => {
     const response = await fetch(`${BASE_URL}/`);
     const { data } = await response.json();
-    console.log(data);
     setReels(data);
   };
 
-  //función de búsqueda
   const searcher = (e) => {
     setSearch(e.target.value);
   };
@@ -25,7 +22,6 @@ const SearchBar = () => {
     searchReels();
   }, []);
 
-  //método de filtrado
   const searchFilter = (reels, search) => {
     if (!search) {
       return reels;
@@ -37,7 +33,10 @@ const SearchBar = () => {
     }
   };
 
-  //renderizamos la vista
+  const removeReelFromState = (id) => {
+    setReels(reels.filter((reel) => reel.id !== id));
+  };
+
   return (
     <div>
       <input
@@ -45,21 +44,25 @@ const SearchBar = () => {
         onChange={searcher}
         type="text"
         placeholder="Search"
-        className="form-control"
+        className="search-bar"
       ></input>
 
-      {/*renderizamos la vista de reels filtrados*/}
       {searchFilter(reels, search).length > 0 ? (
-      <ul>
-        {searchFilter(reels, search).map((reel) => (
-          <Reel key={reel.id} reel={reel} />
-        ))}
-      </ul>
-    ) : (
-      <p>No results found</p>
-    )}
-  </div>
-);
+        <ul>
+          {searchFilter(reels, search).map((reel) => (
+            <Reel
+              key={reel.id}
+              reel={reel}
+              removeReel={() => removeReelFromState(reel.id)}
+              removeReelFromParent={removeReel}
+            />
+          ))}
+        </ul>
+      ) : (
+        <p>No results found</p>
+      )}
+    </div>
+  );
 };
 
 export default SearchBar;
