@@ -9,10 +9,12 @@ const root = document.getElementById("root");
 const rootInstance = createRoot(root);
 rootInstance.render(
   <React.StrictMode>
+  
     <AuthContextProviderComponent>
       <BrowserRouter>
         <App />
       </BrowserRouter>
     </AuthContextProviderComponent>
+
   </React.StrictMode>
 );

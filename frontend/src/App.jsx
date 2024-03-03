@@ -7,11 +7,15 @@ import ReelPage from "./pages/ReelPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import UserPage from "./pages/UserPage";
 import Auth from "./components/Auth";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 function App() {
   return (
+
     <div className="App">
+<ErrorBoundary fallback= "Oooops!! There was an error" > 
       <Routes>
+
         {/* Ruta para el componente Auth */}
         <Route path="/" element={<Auth />} />
 
@@ -22,7 +26,9 @@ function App() {
         <Route path="/user/:id" element={<UserPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
+      </ErrorBoundary>
     </div>
+
   );
 }
 
