@@ -52,3 +52,4 @@ const Reel = ({user, reel, removeReel }) => {
 };
 
 export default Reel;
+

@@ -2,9 +2,7 @@ import React, { useState, useContext } from 'react';
 import { AuthContext } from "../context/AuthContext";
 
 const useLikes = (reelId, initialLikes) => {
-  const { token } = useContext(AuthContext);
-  console.log('Token from context:', token);
-  const [likes, setLikes] = useState(initialLikes);
+  const { token, user, likes, totalLikes, toggleLike, toggleDislike, updateTotalLikes } = useContext(AuthContext);
 
   async function handleLike() {
     try {
@@ -21,9 +19,7 @@ const useLikes = (reelId, initialLikes) => {
       });
 
       if (response.ok) {
-        const newLikes = likes + 1;
-        setLikes(newLikes);
-        return newLikes;
+        toggleLike(reelId);
       } else {
         console.error('Error al dar like:', response.statusText);
       }
