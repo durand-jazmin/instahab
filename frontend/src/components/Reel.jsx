@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import React,{ useContext, useState,useEffect } from "react";
 import { deleteReelService } from "../services";
 import { AuthContext } from "../context/AuthContext";
-import LikesComponent from "./LikesComponent";
+import {LikesComponent,LikeButton} from "./LikesComponent";
 import "./Reel.css";
 
 const base_URL = "http://localhost:3000";
@@ -42,6 +42,7 @@ const Reel = ({user, reel, removeReel }) => {
         {reel.image && ( <img src={`${base_URL}/uploads/${reel.image}`} alt={reel.text} /> )}
         <p>Comment: {reel.text}</p>  
         <LikesComponent reel={reel} />
+     <LikeButton reel={reel}/>
       <div className="nav"><Link to={`/reel/${reel.id}`}>Created at: {new Date(reel.created_at).toLocaleDateString()}</Link></div>  
          {error && <p>Error: {error}</p>}
       
