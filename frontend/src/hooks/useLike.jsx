@@ -5,13 +5,13 @@ import { likeReelService } from '../services';
 const useLike = (id) => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const { token, user } = useContext(AuthContext);
+  const { token} = useContext(AuthContext);
 
 
-  const handleLike = async () => {
+  const handleLike = async (reelId) => {
     try {
       setLoading(true);
-      await likeReelService(id);
+      await likeReelService(reelId,token);
 
     } catch (error) {
       setError(error.message);

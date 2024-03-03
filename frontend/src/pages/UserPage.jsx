@@ -20,15 +20,15 @@ const UserPage = () => {
   if (error) return <ErrorMessage message={error} />;
 
   return (
-    <div className="grid-container">
-      <div className="link-home">
-        <Link to="/">⌂ Home</Link>
+    <div className="gridContainer">
+      <div className="linkHome">
+        <Link to="/"> <i class="material-icons">home</i> </Link>
       </div>
-      <div className="profile-header">
+      <div className="profileHeader">
         <img
           className="avatar"
           src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
-          alt="Avatar"
+          alt={`Avatar${user.id}`}
         />
         <h1>Profile:</h1>
         <p className="email">Email: {user.email}</p>
@@ -39,7 +39,7 @@ const UserPage = () => {
       </div>
 
       {currentUser && currentUser.id === user.id && (
-        <div className="reels-page">
+        <div className="reelsPage">
           <NewReel addReel={addReel} />
           <UserReels id={user.id} />
         </div>

@@ -1,36 +1,36 @@
-.signup-container {
+.signupContainer {
   display: flex;
   padding: 5% 10%;
   border: none;
 }
 
-.auth__left {
+.authLeft {
   margin-right: 2rem;
 }
 
-.signup-screenshot {
+.signupScreenshot {
   width: 100%;
   height: 100%;
   margin-top: 8px;
 }
 
-.signup-form {
+.signupForm {
   flex: 1;
   text-align: center;
   margin: 10px;
   padding: 10px;
 }
 
-.signup-logo {
+.signupLogo {
   width: 20vw;
 }
 
-.input-group {
+.inputGroup {
   margin: 1rem;
   padding: 1rem;
 }
 
-.input-group input {
+.inputGroup input {
   padding: 1vw;
   margin: 5px;
   border: 1px solid grey;
@@ -38,7 +38,7 @@
   width: 40vw;
 }
 
-.signup-button {
+.signupButton {
   color: white;
   margin-top: 0.5vw;
   width: 42.3vw;
@@ -51,8 +51,7 @@ button:hover {
   cursor: pointer;
 }
 
-.signup-link {
-<<<<<<< HEAD
+.signupLink {
   text-align: center;
   color: black;
 }
@@ -62,7 +61,3 @@ a {
   text-decoration: none;
   font: 1em;
 }
-=======
-    text-align: center;
-}
->>>>>>> d5add22228ceffde77da4c53a61c0e8e3793dd2b

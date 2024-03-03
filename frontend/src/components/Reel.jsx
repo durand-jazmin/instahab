@@ -1,15 +1,20 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
+import React,{ useContext, useState,useEffect } from "react";
 import { deleteReelService } from "../services";
 import { AuthContext } from "../context/AuthContext";
-import LikeButton from "./like";
+import {LikesComponent,LikeButton} from "./LikesComponent";
 import "./Reel.css";
 
 const base_URL = "http://localhost:3000";
 
 const Reel = ({ user, reel, removeReel, searchTerm }) => {
+ 
   const navigate = useNavigate();
-  const { token } = useContext(AuthContext);
+
+  const { token, like,toggleLike } = useContext(AuthContext);
+
+  const {isAuthenticated } = useContext(AuthContext);
+
   const [error, setError] = useState("");
 
   const deleteReel = async (id) => {

@@ -4,8 +4,7 @@ import HomePage from "../pages/HomePage";
 import { Navigate } from "react-router-dom";
 
 const Auth = () => {
-  const { user, logout } = useContext(AuthContext);
-
+  const { user } = useContext(AuthContext);
   return user ? (
     <div>
       <HomePage />

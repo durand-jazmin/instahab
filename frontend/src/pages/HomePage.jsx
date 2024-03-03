@@ -11,10 +11,9 @@ import "./HomePage.css";
 const HomePage = () => {
   const navigate = useNavigate();
   const { reels, error, loading, removeReel } = useReels();
-  const { user, logout } = useContext(AuthContext);
-
+  const { user, like, toggleLike, logout } = useContext(AuthContext);
   const [searchTerm, setSearchTerm] = useState("");
-
+  
   const handleLogout = async () => {
     await logout();
     navigate("/login");
@@ -57,7 +56,8 @@ const HomePage = () => {
             </button>
           </div>
         </>
-      ) : null}
+      ) 
+      : null}
     </section>
   );
 };

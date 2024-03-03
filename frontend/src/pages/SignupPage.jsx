@@ -26,23 +26,23 @@ const SignupPage = () => {
   };
 
   return (
-    <section className="signup-container">
-      <div className="auth__left">
+    <section className="signupContainer">
+      <div className="authLeft">
         <img
           src="https://i.imgur.com/P3Vm1Kq.png"
           alt="Instagram Screenshots"
-          className="signup-screenshot"
+          className="signupScreenshot"
         />
         </div>
-        <div className="signup-form">
+        <div className="signupForm">
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVbi1SFIb9MQDGjq6xHhu7Qs41_H3FKRpLUvBH3kcgcw&s"
           alt="Logo"
-          className="signup-logo"
+          className="signupLogo"
         />
         <form onSubmit={handleSignUp}>
           <fieldset>
-            <div className="input-group">
+            <div className="inputGroup">
 
               <input
                 type="email"
@@ -71,12 +71,12 @@ const SignupPage = () => {
               required
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
-            <button className="signup-button">Sign Up</button>
+            <button className="signupButton">Sign Up</button>
             {error && <p>{error}</p>}
             </div>
           </fieldset>
         </form>
-        <div className="signup-link">
+        <div className="signupLink">
           <p>
             Already have an account? <Link to="/login">Log in</Link>
           </p>

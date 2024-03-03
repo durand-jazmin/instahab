@@ -1,12 +1,15 @@
 import { createContext, useEffect, useState } from 'react';
 import { getMyDataService } from '../services/index';
 
-
 export const AuthContext = createContext(null);
 
 export const AuthContextProviderComponent = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem('token'));
   const [user, setUser] = useState(null);
+  const [likes, setLikes] = useState({});
+  const [totalLikes, setTotalLikes] = useState(0);
+
+
 
   useEffect(() => {
     localStorage.setItem('token', token);
@@ -16,6 +19,7 @@ export const AuthContextProviderComponent = ({ children }) => {
     const getUserData = async () => {
       try {
         const data = await getMyDataService(token);
+        console.log(data);
 
         setUser(data);
       } catch (error) {
@@ -26,6 +30,20 @@ export const AuthContextProviderComponent = ({ children }) => {
 
     if (token) getUserData();
   }, [token, setToken]);
+
+  useEffect(() => {
+    const calculateTotalLikes = () => {
+      let total = 0;
+      for (const reelId in likes) {
+        if (likes[reelId] === 1) {
+          total++;
+        }
+      }
+      setTotalLikes(total);
+    };
+
+    calculateTotalLikes();
+  }, [likes]);
 
   const logout = () => {
     setToken('');
@@ -38,8 +56,22 @@ export const AuthContextProviderComponent = ({ children }) => {
     }
   };
 
+  const toggleLike = (reelId) => {
+    setLikes(prevLikes => ({
+      ...prevLikes,
+      [reelId]: prevLikes[reelId] === 1 ? 0 : 1
+    }));
+  };
+
+  const toggleDislike = (reelId) => {
+    setLikes(prevLikes => ({
+      ...prevLikes,
+      [reelId]: prevLikes[reelId] === -1 ? 0 : -1
+    }));
+  };
+
   return (
-    <AuthContext.Provider value={{ token, user, login, logout }}>
+    <AuthContext.Provider value={{ token, user,likes,totalLikes,toggleDislike,toggleLike, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
