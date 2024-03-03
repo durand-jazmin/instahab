@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Reel from "./Reel";
+import "./SearchBar.css";
 
 const SearchBar = () => {
   //setear los hooks useState
@@ -45,7 +46,7 @@ const SearchBar = () => {
         onChange={searcher}
         type="text"
         placeholder="Search"
-        className="form-control"
+        className="search-bar"
       ></input>
 
       {/*renderizamos la vista de reels filtrados*/}

@@ -48,7 +48,7 @@ const HomePage = () => {
           </div>
 
           <div className="center-column">
-            <SearchBar />
+            <SearchBar className="searchbar" />
           </div>
 
           <div className="right-column">
