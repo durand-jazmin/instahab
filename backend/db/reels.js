@@ -7,6 +7,17 @@ const deleteReelById = async (id) => {
   try {
     connection = await getConnection();
 
+    const [reel] = await connection.query(
+      `
+      SELECT * FROM reels WHERE id = ?
+    `,
+      [id]
+    );
+
+    if (reel.length === 0) {
+      throw generateError(`El reel con id: ${id} no existe`, 404);
+    }
+
     await connection.query(
       `
       DELETE FROM reels WHERE id = ?
