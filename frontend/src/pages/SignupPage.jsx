@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { signUpUserService } from "../services";
 import { Link, useNavigate } from "react-router-dom";
+import logo_hab_ from "../images/logo_hab_.png"
+import InstahabMobile from "../images/InstahabMobile.png"
 import "./SignupPage.css";
 
 const SignupPage = () => {
@@ -29,14 +31,14 @@ const SignupPage = () => {
     <section className="signupContainer">
       <div className="authLeft">
         <img
-          src="https://i.imgur.com/P3Vm1Kq.png"
-          alt="Instagram Screenshots"
+          src={InstahabMobile}
+          alt="Instahab Screenshots"
           className="signupScreenshot"
         />
         </div>
         <div className="signupForm">
         <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVbi1SFIb9MQDGjq6xHhu7Qs41_H3FKRpLUvBH3kcgcw&s"
+          src={logo_hab_}         
           alt="Logo"
           className="signupLogo"
         />
