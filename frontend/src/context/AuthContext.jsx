@@ -70,8 +70,12 @@ export const AuthContextProviderComponent = ({ children }) => {
     }));
   };
 
+ const updateTotalLikes = (newTotalLikes) => {
+  setTotalLikes(newTotalLikes);
+};
+  
   return (
-    <AuthContext.Provider value={{ token, user,likes,totalLikes,toggleDislike,toggleLike, login, logout }}>
+    <AuthContext.Provider value={{ token, user,likes,totalLikes,toggleDislike,toggleLike,updateTotalLikes, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
