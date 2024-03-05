@@ -132,12 +132,13 @@ export const deleteReelService = async ({ id, token }) => {
     throw new Error(json.message);
   }
 };
-export const likeReelService = async (id, token) => {
+export const likeReelService = async (reelId, userId, id, token) => {
   const response = await fetch(`${BASE_URL}/reels/${id}/like`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${token}`, 
+      Authorization: `Bearer ${token}`,
+      body: JSON.stringify({ userId }),
     },
   });
 
