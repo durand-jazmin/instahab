@@ -9,11 +9,11 @@
 }
 
 .signupScreenshot {
-  width: 101%;
-  height: 98%;
+  width: 35vw;
+  height: 70vh;
   margin-top: 8px;
 }
-fieldset{
+fieldset {
   border: none;
 }
 
@@ -26,7 +26,7 @@ fieldset{
 
 .signupLogo {
   width: 20vw;
- padding: 2px;
+  padding: 2px;
   margin: 2px;
 }
 

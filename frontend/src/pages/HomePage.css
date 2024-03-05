@@ -16,8 +16,8 @@
   margin: 10px;
 }
 
-.instagram-logo {
-  width: 180px;
+.instahab-logo {
+  width: 210px;
   height: 7vh;
 }
 
@@ -98,4 +98,4 @@ p .totalLikes{
     flex-direction: column;
   }
 }
-}
+
