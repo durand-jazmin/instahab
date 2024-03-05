@@ -2,6 +2,8 @@ import { useContext, useState } from "react";
 import { logInUserService } from "../services";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
+import logo_hab_ from "../images/logo_hab_.png"
+import InstahabMobile from "../images/InstahabMobile.png"
 import "./LoginPage.css";
 
 const LoginPage = () => {
@@ -27,14 +29,14 @@ const LoginPage = () => {
     <section className="loginContainer">
       <div className="auth__left">
         <img
-          src="https://i.imgur.com/P3Vm1Kq.png"
-          alt="Instagram Screenshots"
+        src={InstahabMobile}
+          alt="Instahab Screenshots"
           className="loginScreenshot"
         />
       </div>
       <div className="loginForm">
         <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVbi1SFIb9MQDGjq6xHhu7Qs41_H3FKRpLUvBH3kcgcw&s"
+         src={logo_hab_}
           alt="Logo"
           className="loginLogo"
         />
