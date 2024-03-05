@@ -6,6 +6,7 @@ import { AuthContext } from "../context/AuthContext";
 import Loading from "../components/Loading";
 import SearchBar from "../components/SearchBar";
 import { LikeComponent, TotalLikes } from "../components/LikeComponent";
+import logo_hab_ from "../images/logo_hab_.png"
 import "./HomePage.css";
 
 const HomePage = () => {
@@ -32,9 +33,9 @@ const HomePage = () => {
         <>
           <div className="left-column">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVbi1SFIb9MQDGjq6xHhu7Qs41_H3FKRpLUvBH3kcgcw&s"
-              alt="Instagram Logo"
-              className="instagram-logo"
+            src={logo_hab_}
+              alt="Instahab Logo"
+              className="instahab-logo"
             />
             <Link to={`/user/${user.id}`}>
               {" "}
