@@ -13,6 +13,9 @@
   height: 98%;
   margin-top: 8px;
 }
+fieldset{
+  border: none;
+}
 
 .signupForm {
   flex: 1;
@@ -28,12 +31,14 @@
 .inputGroup {
   margin: 1rem;
   padding: 1rem;
+  border: 1px solid lightgray;
+  border-radius: 3px;
 }
 
 .inputGroup input {
   padding: 1vw;
   margin: 5px;
-  border: 1px solid grey;
+  border: 1px solid lightgray;
   border-radius: 3px;
   width: 40vw;
 }
