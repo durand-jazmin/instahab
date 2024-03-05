@@ -20,12 +20,14 @@ fieldset{
 .signupForm {
   flex: 1;
   text-align: center;
-  margin: 10px;
-  padding: 10px;
+  margin: 5px;
+  padding: 5px;
 }
 
 .signupLogo {
   width: 20vw;
+ padding: 2px;
+  margin: 2px;
 }
 
 .inputGroup {
