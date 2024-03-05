@@ -23,6 +23,7 @@ Comparte Tus Momentos: Sube imágenes y comparte tus momentos favoritos con tus 
 Para el frontend:cd instahab/frontend 
   npm install
   npm start
+  Extraer la carpeta images.
   #
 Para el backend: cd instahab/backend
  npm install
