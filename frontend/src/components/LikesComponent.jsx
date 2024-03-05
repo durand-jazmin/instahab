@@ -1,25 +1,65 @@
-
-import React, {useContext}from 'react';
+import React, { useContext, useState } from 'react';
 import { AuthContext } from '../context/AuthContext';
-import useLikes from '../hooks/useLikes';
-import './LikesComponent.css';
 
 
-export const LikesComponent = ({reel}) => {
-  const { totalLikes } = useContext(AuthContext);
-  
+export const LikeComponent = ({ reelId }) => {
+  const { token, user,likes, toggleLike } = useContext(AuthContext);
+  const [likesCount, setLikesCount] = useState(0);
+  const { login } = useContext(AuthContext);
+  const [showWarning, setShowWarning] = useState(false);
+
+  const handleLike = () => {
+    if (!token) {
+      setShowWarning(true);
+      setTimeout(() => setShowWarning(false), 3000);
+      return;
+    }
+
+    if (user && user.id === reelId) {
+      console.log('You cannot like your own reel.');
+      return;
+    }
+
+    const newLikes = likes[reelId] === 1 ? 0 : 1;
+    
+    toggleLike(reelId, newLikes); 
+  };
+  const isLiked = likes[reelId] === 1;
+
+  const handleIncrement = () => {
+    if (login) {
+      setLikesCount(prevLikes => prevLikes + 1);
+    } else {
+      setShowWarning(true);
+      setTimeout(() => setShowWarning(false), 3000);
+    }
+  };
+
+  const handleDecrement = () => {
+    if (login) {
+      setLikesCount(prevLikes => prevLikes - 1);
+    } else {
+      setShowWarning(true);
+      setTimeout(() => setShowWarning(false), 3000);
+    }
+  };
+
   return (
-          <p className='totalLikes'>Likes: {totalLikes}</p>   
+    <div>
+      <button className={`likeButton ${isLiked ? 'active' : ''}`} onClick={handleLike}>
+        Like
+      </button>
+      {showWarning && <p style={{ color: "orange" }}>You are not logged in. Your like may not be saved.</p>}
+         </div>
   );
 };
 
-export const LikeButton = ({ reel }) => {
-  const { toggleLike } = useContext(AuthContext);
+export const TotalLikes = () => {
+  const totalLikes= Object.values(likes).reduce((total, like) => total + like, 0);
 
-  const handleLikeClick = () => {
-    toggleLike(reel.id);
-  };
   return (
-      <button className="likeButton" onClick={handleLikeClick}>Like</button>
+    <div>
+      <p className='totalLikes'>Total Likes: {totalLikes}</p>
+    </div>
   );
 };
