@@ -5,13 +5,13 @@ import ErrorMessage from "../components/ErrorMessage";
 import { AuthContext } from "../context/AuthContext";
 import Loading from "../components/Loading";
 import SearchBar from "../components/SearchBar";
+import { LikeComponent, TotalLikes } from "../components/LikeComponent";
 import "./HomePage.css";
 
 const HomePage = () => {
   const navigate = useNavigate();
   const { reels, error, loading, removeReel } = useReels();
-  const { user, like, toggleLike, logout } = useContext(AuthContext);
-
+  const { user, totalLikes, logout } = useContext(AuthContext);
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleLogout = async () => {
@@ -44,6 +44,7 @@ const HomePage = () => {
                 alt="Avatar"
               />
             </Link>
+              <p className="totalLikes" >Likes: {totalLikes }</p>
           </div>
 
           <div className="center-column">
