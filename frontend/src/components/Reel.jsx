@@ -77,5 +77,6 @@ if (
 }else {
     return null;
   }
+};
 
 export default Reel;
