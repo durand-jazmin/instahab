@@ -15,11 +15,6 @@ export const LikeComponent = ({ reelId }) => {
       return;
     }
 
-    if (user && user.id === reelId) {
-      console.log('You cannot like your own reel.');
-      return;
-    }
-
     const newLikes = likes[reelId] === 1 ? 0 : 1;
     
     toggleLike(reelId, newLikes); 
