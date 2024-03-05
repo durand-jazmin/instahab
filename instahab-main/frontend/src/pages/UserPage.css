@@ -1,0 +1,54 @@
+.gridContainer {
+  display: grid;
+  grid-template-columns: 4;
+  grid-template-rows: auto;
+  gap: 10px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.linkHome {
+  position: relative;
+  display: inline-block; 
+  width: 50px; 
+  height: 50px;
+  border-radius: 50%; 
+  background-color: black;
+  padding: 10px;
+}
+
+.linkHome i {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white; 
+  font-size: 2em; 
+}
+
+
+.profileHeader {
+  grid-row: 2;
+  grid-column: span 1;
+  justify-self: center;
+  padding: 10px;
+  margin: 10px;
+}
+
+.avatar {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+
+.reelsPage {
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .profileSection {
+    align-items: flex-start;
+  }
+}

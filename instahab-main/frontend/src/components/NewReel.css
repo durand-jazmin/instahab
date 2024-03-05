@@ -1,0 +1,49 @@
+.new-reel {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  color: black;
+  border-radius: 10px;
+}
+
+.add-reel {
+  margin: 10px;
+}
+
+.new-reel form {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-reel input {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  color: #000;
+  width: 400px;
+  cursor: pointer;
+  border: 1px solid lightgray;
+}
+
+.new-reel button {
+  padding: 10px;
+  margin: 10px;
+  color: white;
+  width: 400px;
+  background-color: #3897f0;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.new-reel button:hover {
+  background-color: green;
+}
+
+.new-reel p {
+  margin: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: green;
+}

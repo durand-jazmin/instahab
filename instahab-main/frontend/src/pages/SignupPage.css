@@ -1,0 +1,73 @@
+.signupContainer {
+  display: flex;
+  padding: 5% 10%;
+  border: none;
+}
+
+.authLeft {
+  margin-right: 2rem;
+}
+
+.signupScreenshot {
+  width: 101%;
+  height: 98%;
+  margin-top: 8px;
+}
+
+.signupForm {
+  flex: 1;
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
+  border: none;
+  
+}
+
+.signupLogo {
+  width: 20vw;
+  padding: 2px;
+  margin: 2px;
+}
+
+.inputGroup {
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+}
+
+fieldset{
+  border: none;
+}
+
+.inputGroup input {
+  padding: 1vw;
+  margin: 5px;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  width: 40vw;
+}
+
+.signupButton {
+  color: white;
+  margin-top: 0.5vw;
+  width: 42.3vw;
+  height: 5vh;
+  background-color: #2f80b4;
+  border-radius: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.signupLink {
+  text-align: center;
+  color: black;
+}
+
+a {
+  color: #2f80b4;
+  text-decoration: none;
+  font: 1em;
+}
