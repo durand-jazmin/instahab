@@ -4,7 +4,7 @@ import './ReelList.css';
 
 
 const ReelList = ({ reels, removeReel }) => {
-  //console.log(reels);
+
   return reels.length ? (
     <ul className='reel-list'>
       {reels.map((reel) => (
