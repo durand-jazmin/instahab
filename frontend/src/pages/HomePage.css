@@ -67,21 +67,27 @@
   max-width: 100px;
   margin-top: 20px;
 }
-.likeButton{
+#like{
   position: relative;
-  background-color:gray;
   border: none;
   color: white;
   padding: 0;
   cursor: pointer;
+  
 }
 
-.likeButton:hover{
+#like:hover{
 background-color: green;
  color: white;
 font-weight: bold;
+cursor: grab;
+background-image: linear-gradient(to right, red 0%, lightgrey 0%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: background-position 0.5s ease;
 }
-.likeButton.active{
+#like.active{
 background-color: red;
 color: white;
 font-weight: bold;
