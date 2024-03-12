@@ -48,8 +48,8 @@ if (
   return (
     <article className="reel">
       <div className="user-info">
-        <img src={`https://source.unsplash.com/random/30x30?sig=${reel.user_id}`} alt="User Profile" />
-        <div className="user-email">Usuario: {reel.email}</div>
+        <img src={`https://source.unsplash.com/random/30x30?sig=${reel.user_id}`} alt={reel.email} />
+        <div className="user-email">User: {reel.email}</div>
         <span className="material-symbols-outlined" id="button" onClick={handleDeleteReel}><span>delete</span></span>
           <LikeComponent reelId={reel.id}/>
       </div>
