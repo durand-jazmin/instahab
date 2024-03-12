@@ -38,12 +38,14 @@
  .counter{
   font: 1em;
  }
+
  .counter button{
   padding: 20px;
   margin: 20px;
   color: #000;
   background-color: blue;
  }
+
 .logout-button {
   position: absolute;
   top: 20px;
@@ -67,13 +69,13 @@
   max-width: 100px;
   margin-top: 20px;
 }
+
 #like{
   position: relative;
   border: none;
   color: white;
   padding: 0;
   cursor: pointer;
-  
 }
 
 #like:hover{
@@ -87,21 +89,18 @@ background-image: linear-gradient(to right, red 0%, lightgrey 0%);
   color: transparent;
   transition: background-position 0.5s ease;
 }
+
 #like.active{
 background-color: red;
 color: white;
 font-weight: bold;
 }
+
 p .totalLikes{
   margin: 20px;
   text-align: center;
   font-weight: bold;
   font-size: 1em;
 }
-
-@media screen and (max-width: 768px) {
-  .home-page-container {
-    flex-direction: column;
-  }
-}
+  
 
