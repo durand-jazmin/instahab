@@ -41,7 +41,7 @@ export const LikeComponent = ({ reelId }) => {
 
   return (
      <div>
-    <span className="material-icons"  onClick={handleLike} style={{ color: isLiked ? 'red' : 'lightgrey' }}><span class="material-symbols-outlined">favorite</span></span>
+    <span className="material-icons"  onClick={handleLike} style={{ color: isLiked ? 'red' : 'lightgrey' }}><span >favorite</span></span>
   {showWarning && <p style={{ color: "orange" }}>You are not logged in. Your like may not be saved.</p>}
 </div>
   );
