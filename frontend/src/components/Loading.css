@@ -11,14 +11,36 @@
     border-left-color: blue;
     border-right-color: lightgray;
     border-bottom-color:gray ;
-    animation: spin 1s linear infinite; 
+    animation: spin 1s linear  changeColors 5s ease-in-out infinite; 
     margin: auto;
     padding: 100px;
  
   }
   
   @keyframes spin {
-    0% { transform: rotate(0deg); } 
+   
     100% { transform: rotate(360deg); } 
   }
+ @keyframes changeColors {
+  0% {
+    border-left-color: blue;
+    border-right-color: lightgray;
+    border-bottom-color: gray;
+  }
+  33% {
+    border-left-color: lightgray;
+    border-right-color: gray;
+    border-bottom-color: blue;
+  }
+  66% {
+    border-left-color: gray;
+    border-right-color: blue;
+    border-bottom-color: lightgray;
+  }
+  100% {
+    border-left-color: blue;
+    border-right-color: lightgray;
+    border-bottom-color: gray;
+  }
+}
   
