@@ -50,8 +50,8 @@ if (
       <div className="user-info">
         <img src={`https://source.unsplash.com/random/30x30?sig=${reel.user_id}`} alt="User Profile" />
         <div className="user-email">Usuario: {reel.email}</div>
-        <button onClick={handleDeleteReel}>Delete reel</button>
-          <LikeComponent className="buttonLike" reelId={reel.id}/>
+        <span className="material-symbols-outlined" id="button" onClick={handleDeleteReel}><span>delete</span></span>
+          <LikeComponent reelId={reel.id}/>
       </div>
       <ConfirmationPopup
         show={showConfirmationPopup}
