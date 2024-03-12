@@ -50,9 +50,8 @@
   font-size: 15px;
 }
 
-.reel button {
+#button {
   background-color: transparent;
-  border: 1px solid lightgray;
   cursor: pointer;
   padding: 5px 10px;
   margin: 5px;
@@ -61,6 +60,6 @@
 }
 
 
-.reel button:hover {
+#button:hover {
   color: #dc3545;
 }
