@@ -12,8 +12,9 @@
     border-right-color: lightgray;
     border-bottom-color:gray ;
     animation: spin 1s linear  changeColors 5s ease-in-out infinite; 
-    margin: auto;
-    padding: 100px;
+   top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
  
   }
   
