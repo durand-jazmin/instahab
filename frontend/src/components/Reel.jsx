@@ -64,7 +64,7 @@ if (
         {reel.image && (
           <img src={`${base_URL}/uploads/${reel.image}`} alt={reel.text} />
         )}
-        <p>Comment: {reel.text}</p>
+        <p>{reel.text}</p>
         <div className="nav">
           <Link to={`/reel/${reel.id}`}>
             Created at: {new Date(reel.created_at).toLocaleDateString()}
