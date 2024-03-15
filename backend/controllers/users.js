@@ -4,6 +4,35 @@ import { generateError } from '../helpers.js';
 import { createUser, getUserById, getUserByEmail } from '../db/users.js';
 import { getReelsByUserId } from '../db/reels.js';
 
+const updateUserController = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const { email, password } = req.body;
+    const existingUser = await getUserById(id);
+    
+    if (!existingUser) {
+      throw generateError('El usuario no existe', 404);
+    }
+
+    if (email) {
+      existingUser.email = email;
+    }
+    if (password) {
+      const hashedPassword = await bcrypt.hash(password, 10);
+      existingUser.password = hashedPassword;
+    }
+
+    await updateUserById(id, existingUser);
+
+    res.send({
+      status: 'ok',
+      message: 'Usuario actualizado correctamente',
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 const newUserController = async (req, res, next) => {
   try {
     const { email, password } = req.body;
@@ -109,4 +138,5 @@ export {
   getUserReelsController,
   getMeController,
   loginController,
+  updateUserController,
 };
