@@ -1,5 +1,43 @@
 import { getConnection } from './getPool.js';
 
+const createLike = async (userId, reelId) => {
+  let connection;
+
+  try {
+    connection = await getConnection();
+    
+    const [[existingLike]] = await connection.query('SELECT * FROM likes WHERE user_id = ? AND reel_id = ?', [userId, reelId]);
+
+    if (existingLike) {
+      throw new Error('El usuario ya ha dado like a este reel');
+    }
+
+    await connection.query('INSERT INTO likes (user_id, reel_id) VALUES (?, ?)', [userId, reelId]);
+
+    await updateLikes(reelId);
+  } catch (error) {
+    console.error(error);
+    throw error;
+  } finally {
+    if (connection) connection.release();
+  }
+};
+
+const updateLikes = async (reel_id) => {
+  let connection;
+
+  try {
+    connection = await getConnection();
+    await connection.query('UPDATE reels SET likes = (SELECT COUNT(*) FROM likes WHERE reel_id = ?) WHERE id = ?', [reel_id, reel_id]);
+  } catch (error) {
+    console.error(error);
+    throw error;
+  } finally {
+    if (connection) connection.release();
+  }
+};
+
+
 const isLiked = async (userId, reelId) => {
   let connection;
 
@@ -78,4 +116,4 @@ const updateLikes = async (reel_id) => {
   }
 };
 
-export { isLiked, hasLiked, unlikeReel, updateLikes };
+export { createLike,isLiked, hasLiked, unlikeReel, updateLikes };
