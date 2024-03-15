@@ -89,24 +89,6 @@ const getAllReels = async () => {
   }
 };
 
-const createReel= async (userId, text, image = '') => {
-  let connection;
 
-  try {
-    connection = await getConnection();
 
-    const [result] = await connection.query(
-      `
-      INSERT INTO reels (user_id, text, image)
-      VALUES(?,?,?)
-    `,
-      [userId, text, image]
-    );
-
-    return result.insertId;
-  } finally {
-    if (connection) connection.release();
-  }
-};
-
-export { createReel, getAllReels, getReelById, getReelsByUserId, deleteReelById };
+export {  getAllReels, getReelById, getReelsByUserId, deleteReelById };
