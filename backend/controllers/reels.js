@@ -1,5 +1,5 @@
 import {
-  createReel,
+
   getAllReels,
   getReelById,
   deleteReelById,
