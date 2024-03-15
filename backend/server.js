@@ -9,6 +9,7 @@ import {
   getUserReelsController,
   getMeController,
   loginController,
+updateUserController,
 } from './controllers/users.js';
 
 import {
@@ -21,7 +22,9 @@ import {
 import {
   isLikedController,
   unlikeReelController,
-hasLikedController
+  hasLikedController,
+  updateLikesController,
+  createLikeController,
 } from './controllers/likes.js';
 
 import { authUser } from './middlewares/auth.js';
@@ -42,6 +45,7 @@ app.get('/user/:id', getUserController);
 app.get('/user/:id/reels', getUserReelsController);
 app.get('/user', authUser, getMeController);
 app.post('/login', loginController);
+app.put('/user/:id', updateUserController);
 
 // Rutas de reels
 app.post('/', authUser, newReelController);
@@ -53,6 +57,7 @@ app.delete('/reel/:id', authUser, deleteReelController);
 app.post('/reels/:reelId/like', authUser, isLikedController);
 app.delete('/reels/:reelId/like', authUser, unlikeReelController);
 app.get('/reels/:reelId/hasLiked/:userId', hasLikedController);
+app.post('/reels/:reelId/updateLikes', authUser, updateLikesController);
 
 // Middleware de 404
 app.use((req, res) => {
