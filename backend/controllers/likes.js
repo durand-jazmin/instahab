@@ -1,4 +1,4 @@
-import { hasLiked, isLiked, unlikeReel } from '../db/likes.js';
+import { hasLiked, isLiked, unlikeReel,updateLikes } from '../db/likes.js';
 
 const isLikedController = async (req, res, next) => {
   try {
@@ -46,5 +46,33 @@ const hasLikedController = async (req, res, next) => {
     next(error);
   }
 };
+const updateLikesController = async (req, res, next) => {
+  try {
+    const { reelId } = req.params;
+       await updateLikes(reelId);
 
-export { hasLikedController, unlikeReelController, isLikedController };
+    res.status(200).send({
+      status: 'ok',
+      message: 'Likes actualizados correctamente',
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+const createLikeController = async (req, res, next) => {
+  try {
+    
+    const { reelId } = req.params; 
+    const { userId } = req;
+
+    await createLike(userId, reelId);
+
+    res.status(201).json({ message: 'El like ha sido creado exitosamente' });
+  } catch (error) {
+
+    console.error('Error al crear el like:', error);
+    next(error); 
+  }
+};
+ 
+export { createLikeController,hasLikedController, unlikeReelController, isLikedController,updateLikesController };
