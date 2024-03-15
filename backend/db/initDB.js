@@ -32,8 +32,10 @@ async function main() {
         text VARCHAR(280),
         image VARCHAR(100) NOT NULL,
         likes INTEGER DEFAULT 0,
+        likes_count INTEGER ,
         created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-        FOREIGN KEY (user_id) REFERENCES users(id)
+        FOREIGN KEY (user_id) REFERENCES users(id),
+        
       );
     `);
 
